@@ -1,0 +1,215 @@
+# require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - bin/**
+    - db/migrate/**/*
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+SpaceBeforeFirstArg:
+  Enabled: false
+
+# Single Quotes
+StringLiterals:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - db/**/*
+    - apps/assets/javascripts/**/*
+
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - spec/**/*
+    - db/**/*
+    - config/deploy/**/*
+    - config/initializers/*
+    - config/environments/*
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Exclude:
+
+Lint/AmbiguousOperator:
+  Enabled: false
+
+Lint/Void:
+  Exclude:
+
+Lint/HandleExceptions:
+  Enabled: false
+
+Lint/RescueException:
+  Exclude:
+
+Lint/UnusedBlockArgument:
+  Enabled: true
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Lint/Eval:
+  Exclude:
+
+Lint/ShadowingOuterLocalVariable:
+  Exclude:
+
+Style/AlignParameters:
+  Enabled: false
+
+Style/MultilineOperationIndentation:
+  Enabled: false
+
+Style/Encoding:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false #Breaks rails loader
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': '[]'
+    '%r': '{}'
+    '%w': '[]'
+    '%W': '[]'
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/AccessorMethodName:
+  Enabled: false # Not disabling now
+
+Style/AlignArray:
+  Exclude:
+
+Style/AsciiComments: #А почему бы и нет?
+  Enabled: false
+
+Style/CommentAnnotation:
+  Enabled: false
+
+Style/IfUnlessModifier:
+    Enabled: false
+
+Style/RescueModifier:
+  Enabled: false
+
+Style/AndOr:
+  Enabled: false #Does not make much sense
+
+Style/DoubleNegation:
+  Enabled: false #Avoid the use of double negation (!!)
+
+Style/TrivialAccessors:
+  AllowPredicates: true
+
+Style/PredicateName:
+  Exclude:
+
+Style/GlobalVars:
+  Exclude:
+
+Style/ClassVars:
+  Exclude:
+
+Style/MethodName:
+  Enabled: false
+
+RSpec/InstanceVariable:
+  Exclude:
+
+RSpec/FilePath:
+  Enabled: false # C: Spec path should end with classname*_spec.rb
+
+Rails/HasAndBelongsToMany:
+  Enabled: false # C: Prefer has_many :through to has_and_belongs_to_many.
+
+Rails/Validation:
+  Enabled: false # Prefer the new style validations validates :column, presence: value over validates_presence_of
+
+Rails/Output:
+  Exclude:
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+Style/SymbolArray:
+  Enabled: true # Disabled by default
+  Exclude:
+    - db/migrate/**/* # just a lot of fails
+
+Style/AlignHash:
+  Exclude:
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+  Exclude:
+    - apps/**/assets/javascripts/**/*
+
+Style/LineEndConcatenation:
+  Exclude:
+    - apps/assets/javascripts/**/*
+
+Style/ModuleFunction:
+  Enabled: false
+
+Style/HashSyntax:
+  Exclude:
+
+RSpec/DescribeClass:
+  Enabled: false
+
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Style/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Style/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Rails/Delegate:
+  Exclude:
+
+Style/GuardClause:
+  Enabled: false
+
+Style/SpaceInsideBrackets:
+  Enabled: false
+
+Style/AlignParameters:
+  Enabled: false
+
+Style/MultilineOperationIndentation:
+  Enabled: false
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+RSpec/MultipleDescribes:
+  Enabled: false
+
+Style/StringLiteralsInInterpolation:
+  Enabled: false

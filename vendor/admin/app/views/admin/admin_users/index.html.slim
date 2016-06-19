@@ -1,0 +1,18 @@
+ul.nav.nav-tabs.tabs-admin-users role="tablist"
+  - @admin_users.each do |group, admins|
+    li role="presentation" class="tab #{group}"
+      a.tab-title aria-controls="home" data-toggle="tab" href="#tab-content-#{group}" role="tab" = group.capitalize
+.tab-content
+  - @admin_users.each do |group, admins|
+    .tab-pane role="tabpanel" class="#{group}" id="tab-content-#{group}"
+      table.table.table-striped.table-bordered
+        tr
+          th Login
+          th Role
+          th Created
+        - admins.each do |admin_user|
+          tr
+            td = link_to admin_user.email, edit_admin_user_path(admin_user)
+            td = admin_user.role
+            td = l admin_user.created_at
+= link_to "Add admin", :new_admin_user, title: "Add", class: "btn btn-primary"

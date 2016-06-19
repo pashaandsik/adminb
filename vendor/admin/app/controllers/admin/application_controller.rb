@@ -1,5 +1,8 @@
+# frozen_string_literal: true
 module Admin
   class ApplicationController < ActionController::Base
+    # extend ActiveSupport::Memoizable
+
     before_action :check_ip
     before_action :require_user
     before_action :check_access
@@ -9,8 +12,10 @@ module Admin
     helper_method :current_user
 
     def user_session
-      @user_session ||= AdminUserSession.new(self)
+      @user_session ||= Admin::UserSession.new(self)
     end
+
+    # memoize :user_session
 
     private
 
@@ -25,7 +30,7 @@ module Admin
 
     def check_access
       return true unless current_user
-      # authorize!(:view, :basic_info)
+      authorize!(:view, :basic_info)
     end
 
     def require_guest
@@ -36,12 +41,14 @@ module Admin
       redirect_to :login and return unless current_user
     end
 
-    # def ability
-    #   @ability ||= Crm::Ability.new(current_user)
-    # end
-    #
-    # delegate :can?, :cannot?, :authorize!, :editable_fields, to: :ability
-    # helper_method :can?, :cannot?
+    def ability
+      @ability ||= Admin::Ability.new(current_user)
+    end
+
+    # memoize :ability
+
+    delegate :can?, :cannot?, :authorize!, :editable_fields, to: :ability
+    helper_method :can?, :cannot?
 
     def redirect_to_index(*args)
       redirect_to({ action: :index }, *args)

@@ -1,0 +1,9 @@
+- if model.errors.any?
+  .alert.alert-block.alert-danger
+    a.close data-dismiss="alert" href="#" ×
+    h4.alert-heading
+      i.fa.fa-exclamation-triangle
+      = t("errors.validate")
+    ul
+      - model.errors.full_messages.each do |msg|
+        li #{msg}

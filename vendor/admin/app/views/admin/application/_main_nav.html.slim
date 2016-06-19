@@ -1,0 +1,16 @@
+/= sdfdsfdsf
+- if current_user && can?(:view, :basic_info)
+  .navbar.navbar-inverse.navbar-fixed-top role="navigation"
+    .navbar-header
+      = link_to "Admin panel", :root, class: "navbar-brand"
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        - if can?(:manage, :settings)
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown"
+              'Settings
+              b.caret
+            ul.dropdown-menu role="menu"
+              - if can?(:manage, :admin_user)
+                li = link_to "Admin users", :admin_users
+        li = link_to "Logout", :logout, method: "post", remote: true

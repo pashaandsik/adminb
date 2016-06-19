@@ -1,19 +1,18 @@
 doctype html
 html
   head
-    title Binomo CRM
+    title Admin
     meta charset="utf-8"
     = stylesheet_link_tag "admin/application", "media" => "all", "data-turbolinks-track" => true
     = javascript_include_tag "admin/application", "data-turbolinks-track" => true
     = csrf_meta_tags
     link rel="icon" type="image/png" href="/admin.ico"
-  body id=(yield :body_id) class=(body_classes) data-alert=(flash[:alert]) data-notice=(flash[:notice])
+  body style= "padding-top: 100px;"
     = render "main_nav"
-    = render "timer"
-
-    #main-content.container
-      - flash.to_h.slice("notice", "alert").each do |type, message|
-        .alert class=(type == "alert" ? "alert-error" : "alert-success")
-          a.close href="#" data-dismiss="alert" ×
-          = message
-      .content = yield
+    .container
+      #main-content
+        - flash.to_h.slice("notice", "alert").each do |type, message|
+          .alert class=(type == "alert" ? "alert-error" : "alert-success")
+            a.close href="#" data-dismiss="alert" ×
+            = message
+      = yield

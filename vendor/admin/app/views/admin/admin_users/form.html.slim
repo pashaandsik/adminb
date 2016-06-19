@@ -1,0 +1,18 @@
+h2 #{(@form.persisted? ? 'Edit' : 'New')} admin user
+
+.row
+  .span7
+    = simple_form_for @form do |f|
+      = f.input :email, input_html: { class: "span4" }
+      = f.input :password, input_html: { class: "span4" }
+      = f.input :role, collection: Admin::Ability.rights.keys, prompt: "Select role", input_html: { class: 'span4' }
+      = f.input :active, as: :boolean
+      hr
+      .controls
+        => f.button :submit, class: "btn btn-primary"
+        = link_to "Back", :admin_users, class: "btn btn-default"
+
+  .span5
+    h4 Abilities
+    ul#role-abilities
+      = render "abilities"
