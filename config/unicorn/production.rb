@@ -1,5 +1,5 @@
 env               = ENV["RAILS_ENV"] || "production"
-project           = "binomo"
+project           = "adminb"
 domain            = "#{project}.com"
 app_path          = "/home/#{project}/#{domain}"
 current_path      = "#{app_path}/current"
