@@ -87,10 +87,6 @@ GEM
     concurrent-ruby (1.0.2)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
-    daemons (1.2.3)
-    daemons-rails (1.2.1)
-      daemons
-      multi_json (~> 1.0)
     debug_inspector (0.0.2)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
@@ -148,7 +144,6 @@ GEM
     pg (0.18.4)
     powerpack (0.1.1)
     puma (3.4.0)
-    que (0.11.5)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -291,7 +286,6 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap3-datetimepicker-rails (~> 4.17.37)
   coffee-rails (~> 4.1.0)
-  daemons-rails
   draper
   factory_girl_rails (~> 4.0)
   font-awesome-sass (~> 4.6.2)
@@ -299,10 +293,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   momentjs-rails (>= 2.9.0)
-  nokogiri
   pg (~> 0.15)
   puma
-  que
   rails (= 4.2.6)
   rspec-rails (~> 3.0)
   rubocop!

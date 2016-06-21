@@ -15,8 +15,6 @@ module Admin
       @user_session ||= Admin::UserSession.new(self)
     end
 
-    # memoize :user_session
-
     private
 
     def page
@@ -44,8 +42,6 @@ module Admin
     def ability
       @ability ||= Admin::Ability.new(current_user)
     end
-
-    # memoize :ability
 
     delegate :can?, :cannot?, :authorize!, :editable_fields, to: :ability
     helper_method :can?, :cannot?
