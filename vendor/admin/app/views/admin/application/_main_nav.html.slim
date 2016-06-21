@@ -5,6 +5,8 @@
       = link_to "Admin panel", :root, class: "navbar-brand"
     .collapse.navbar-collapse
       ul.nav.navbar-nav
+        - if can?(:view, :users)
+          li = link_to "Users", :users
         - if can?(:manage, :settings)
           li.dropdown
             a.dropdown-toggle href="#" data-toggle="dropdown"

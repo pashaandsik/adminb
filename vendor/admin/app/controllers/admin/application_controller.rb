@@ -22,7 +22,7 @@ module Admin
     end
 
     def check_ip
-      ips =  %w[127.0.0.1]
+      ips =  %w[127.0.0.1 192.168.1.111]
       raise "NotAllowed" unless ips.include?(request.remote_ip)
     end
 

@@ -11,7 +11,7 @@ module Admin
     def create
       if @form.login!
         sign_in(@form.user)
-        redirect_to :home
+        redirect_to :root
       else
        render :new
       end

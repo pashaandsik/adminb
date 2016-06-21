@@ -1,0 +1,22 @@
+= link_to "Создать", new_user_path, title: "Создать", class: "btn btn-primary"
+br
+br
+article
+  .table-responsive
+    table.table.table-bordered
+      thead
+        tr
+          th Id
+          th Email
+          th Email verified
+          th
+      tbody
+        - @users.each do |user|
+          tr
+            td = user.id
+            td = user.email
+            td = user.email_verified
+            td
+              => user.edit_button
+              => user.remove_button
+= paginate @users

@@ -59,11 +59,8 @@ module Admin
       case entity.to_sym
       when :user
         case role.to_sym
-        when :transport_manager, :info
-          %i[docs_verified]
         when :admin
-          %i[ blocked phone_verified email_verified docs_verified
-         phone first_name last_name]
+          %i[ password email email_verified first_name last_name]
         else
           []
         end
@@ -71,6 +68,6 @@ module Admin
     end
 
     add_right :admin, :manage, :all # only used to show rights in user form
-    add_right %i[info transport_manager], :view, :basic_info
+    add_right :info, :view, :basic_info
   end
 end

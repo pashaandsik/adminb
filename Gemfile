@@ -15,6 +15,7 @@ gem 'turbolinks-redirect'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'draper'
+gem 'kaminari'
 # gem 'nokogiri'
 gem 'font-awesome-sass', '~> 4.6.2'
 gem 'momentjs-rails', '>= 2.9.0'

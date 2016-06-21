@@ -3,9 +3,9 @@
     = form_tag :login, class: "form-signin" do
       h3.form-signin-heading Welcome! Please Sign In
 
-      = text_field_tag :email, "", placeholder: "Email"
+      = text_field_tag :email, "", placeholder: "Email", class: "form-control"
 
-      = password_field_tag :password, "",placeholder: "Password"
+      = password_field_tag :password, "",placeholder: "Password", class: "form-control"
 
       .control-group
         .controls = submit_tag "Sign in", class: "btn btn-lg btn-primary btn-block"

@@ -11,5 +11,12 @@ class CreateAdminUsers < ActiveRecord::Migration
       t.timestamps null: false
     end
     add_index :admin_users, :encrypted_email, unique: true
+
+    Admin::AdminUser.create(
+        email: "admin@gmail.com",
+        password: "Admin",
+        role: "admin",
+        active: true
+    )
   end
 end

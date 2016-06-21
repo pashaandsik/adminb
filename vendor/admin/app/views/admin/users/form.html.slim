@@ -1,0 +1,10 @@
+= simple_form_for @form, url: (@form.persisted? ? user_path(id: @form.entity.id) : :users), method: (@form.persisted? ? :put : :post), as: :user do |f|
+  fieldset
+    = f.input :email, label: "email"
+    = f.input :first_name, label: "Имя"
+    = f.input :last_name, label: "Фамилия"
+    = f.input :password, input_html: { class: "span4" }
+    = f.input :email_verified, as: :boolean
+  fieldset
+  footer
+    = f.button :submit, "Сохранить", class: "btn btn-primary"
