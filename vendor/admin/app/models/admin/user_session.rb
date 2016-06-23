@@ -4,8 +4,6 @@ module Admin
     attr_reader :controller
     delegate :request, :params, :flash, :session, :logger, to: :controller
 
-    # extend ActiveSupport::Memoizable
-
     def initialize(controller)
       @controller = controller
     end
@@ -13,9 +11,6 @@ module Admin
     def current_user
       @current_user ||= find_current_user
     end
-
-    # memoize :current_user
-
 
     def sign_in(user)
       cookies[:admin_user_id] = user.id
