@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 module Admin
   class ApplicationController < ActionController::Base
-    before_action :check_ip
+    # before_action :check_ip
     before_action :require_user
-    # before_action :check_access
+    before_action :check_access
     before_action :set_locale
 
     delegate :current_user, :sign_in, :sign_out, :guest?, to: :user_session
