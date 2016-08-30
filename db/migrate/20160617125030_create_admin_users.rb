@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class CreateAdminUsers < ActiveRecord::Migration
+class CreateAdminUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :admin_users do |t|
       t.string     :encrypted_email, null: false

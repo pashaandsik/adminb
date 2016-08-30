@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.6'
+gem 'rails', '~> 5.0.0.rc1'
 gem 'pg', '~> 0.15'
 gem 'unicode'
 gem 'with_advisory_lock'
@@ -8,13 +8,13 @@ gem 'with_advisory_lock'
 gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'turbolinks-redirect'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'draper'
+gem 'draper', github: "drapergem/draper"
 gem 'kaminari'
 # gem 'nokogiri'
 gem 'font-awesome-sass', '~> 4.6.2'
@@ -24,8 +24,15 @@ gem 'traco'
 gem 'simple_form'
 gem 'scrypt'
 gem 'symmetric-encryption'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'russian'
+gem 'daemons'
 # gem 'daemons-rails' #test
-# gem 'que'
+# Sidekiq heap
+gem 'sidekiq'
+gem 'sidekiq-scheduler', '~> 2.0'
+gem 'sinatra', github: 'sinatra'
+
 gem 'virtus'
 gem 'slim-rails'
 gem 'scrypt'
@@ -46,7 +53,7 @@ gem 'admin',    path: 'vendor/admin'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'spring-commands-rspec'
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_girl_rails'
   gem 'yard'
   gem 'image_size'
   gem 'timecop'
@@ -60,7 +67,9 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'spring'
+  gem 'letter_opener'
   gem 'rubocop',                  require: false, git: 'https://github.com/bbatsov/rubocop.git'
   gem 'rubocop-rspec',            require: false
 end

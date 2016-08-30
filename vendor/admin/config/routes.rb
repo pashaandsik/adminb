@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Admin::Engine.routes.draw do
+
   root to: "users#index"
   get  "/login"   => "sessions#new"
   post "/login"   => "sessions#create"

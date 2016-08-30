@@ -11,6 +11,7 @@ config/symmetric_encryption
 public/uploads
 public/assets
 /.idea
+/.env
 /.ruby-gemset
 /.yardoc
 coverage
