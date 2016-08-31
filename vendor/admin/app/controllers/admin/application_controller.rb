@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 module Admin
   class ApplicationController < ActionController::Base
-    # extend ActiveSupport::Memoizable
-
-    before_action :check_ip
+    # before_action :check_ip
     before_action :require_user
     before_action :check_access
     before_action :set_locale
@@ -21,10 +19,10 @@ module Admin
       (params[:page] || 1).to_i
     end
 
-    def check_ip
-      ips =  %w[127.0.0.1 192.168.1.111]
-      raise "NotAllowed" unless ips.include?(request.remote_ip)
-    end
+    # def check_ip
+    #   ips =  %w[127.0.0.1 192.168.1.111]
+    #   raise "NotAllowed" unless ips.include?(request.remote_ip)
+    # end
 
     def check_access
       return true unless current_user

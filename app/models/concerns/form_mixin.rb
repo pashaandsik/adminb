@@ -1,4 +1,4 @@
-module FormMixin
+module  FormMixin
   extend ActiveSupport::Concern
 
   included do
